@@ -6,22 +6,56 @@
 
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const { DatabaseSync } = require('node:sqlite');
 
-const DB_PATH = path.join(__dirname, '..', 'data', 'dev.db');
+const BUNDLED_DB_PATH = path.join(__dirname, '..', 'data', 'dev.db');
+const TMP_DATA_DIR = path.join(os.tmpdir(), 'dlas-data');
+const TMP_DB_PATH = path.join(TMP_DATA_DIR, 'dev.db');
 
-// Ensure data directory exists
-const dataDir = path.dirname(DB_PATH);
-if (!fs.existsSync(dataDir)) {
+let activeDbPath = BUNDLED_DB_PATH;
+
+try {
+  const dataDir = path.dirname(BUNDLED_DB_PATH);
   fs.mkdirSync(dataDir, { recursive: true });
+  // Test write
+  const testFile = path.join(dataDir, '.test-' + Date.now() + '.tmp');
+  fs.writeFileSync(testFile, '1');
+  fs.unlinkSync(testFile);
+} catch (e) {
+  // Read-only filesystem (e.g. /var/task on Vercel/Lambda)
+  activeDbPath = TMP_DB_PATH;
+  try {
+    fs.mkdirSync(TMP_DATA_DIR, { recursive: true });
+    if (!fs.existsSync(TMP_DB_PATH) && fs.existsSync(BUNDLED_DB_PATH)) {
+      fs.copyFileSync(BUNDLED_DB_PATH, TMP_DB_PATH);
+    }
+  } catch (err) {
+    console.warn('[db] Failed copying db to tmp:', err.message);
+  }
 }
 
 // Open SQLite database
-const sqlite = new DatabaseSync(DB_PATH);
+let sqlite;
+try {
+  sqlite = new DatabaseSync(activeDbPath);
+  sqlite.exec('PRAGMA journal_mode = WAL;');
+  sqlite.exec('PRAGMA foreign_keys = ON;');
+} catch (err) {
+  // If WAL or active path failed, try in tmp or memory
+  try {
+    fs.mkdirSync(TMP_DATA_DIR, { recursive: true });
+    if (!fs.existsSync(TMP_DB_PATH) && fs.existsSync(BUNDLED_DB_PATH)) {
+      try { fs.copyFileSync(BUNDLED_DB_PATH, TMP_DB_PATH); } catch (_) {}
+    }
+    sqlite = new DatabaseSync(TMP_DB_PATH);
+    sqlite.exec('PRAGMA foreign_keys = ON;');
+  } catch (innerErr) {
+    console.warn('[db] Opening in-memory fallback SQLite database');
+    sqlite = new DatabaseSync(':memory:');
+  }
+}
 
-// Enable WAL mode and foreign keys for high performance & integrity
-sqlite.exec('PRAGMA journal_mode = WAL;');
-sqlite.exec('PRAGMA foreign_keys = ON;');
 
 const db = {
   raw: sqlite,

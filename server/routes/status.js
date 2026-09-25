@@ -27,7 +27,7 @@ function statusTextBn(status, caseType) {
 
 function handleStatus(req, res, pathParts, query, body, ctx) {
   if (req.method === 'GET') {
-    const reference = (query.reference || ctx?.citizenApplicationId || '').trim();
+    const reference = (query.reference || query.id || query.appId || ctx?.citizenApplicationId || '').trim();
     if (!reference) return { status: 400, data: { error: 'reference parameter is required' } };
 
     let application = null;

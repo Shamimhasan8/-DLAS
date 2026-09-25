@@ -148,6 +148,7 @@ const server = http.createServer(async (req, res) => {
 
       switch (rootRoute) {
         case 'auth':
+        case 'login':
           result = handleAuth(req, res, subParts, query, body, ctx);
           break;
         case 'applications':
@@ -160,9 +161,9 @@ const server = http.createServer(async (req, res) => {
               result = handleAinShohay(req, res, 'applications', query, body);
             }
           } else if (req.method === 'GET') {
-            const aUser = getAinShohayUser(req);
-            if (aUser) {
-              result = handleAinShohay(req, res, 'applications', query, body);
+            const ashRes = handleAinShohay(req, res, 'applications', query, body);
+            if (ashRes && Array.isArray(ashRes.applications)) {
+              result = ashRes;
             } else {
               result = handleApplications(req, res, subParts, query, body, ctx);
             }
@@ -177,13 +178,16 @@ const server = http.createServer(async (req, res) => {
         case 'status':
           result = handleStatus(req, res, subParts, query, body, ctx);
           break;
-        case 'track':
-          if (req.method === 'POST') {
-            result = handleAinShohay(req, res, 'track', query, body);
+        case 'track': {
+          const ashRes = handleAinShohay(req, res, 'track', query, body);
+          if (ashRes && !ashRes.error) {
+            result = ashRes;
           } else {
-            result = handleStatus(req, res, subParts, query, body, ctx);
+            const statRes = handleStatus(req, res, subParts, query, body, ctx);
+            result = (statRes && statRes.status === 200) ? statRes : (ashRes || statRes);
           }
           break;
+        }
         case 'triage':
           if (body && (body.caseId || body.runId) || req.method === 'PATCH') {
             result = handleTriage(req, res, subParts, query, body, ctx);
@@ -211,10 +215,15 @@ const server = http.createServer(async (req, res) => {
         case 'lawyer':
           if (subParts.length > 0 && subParts[0] === 'assign') {
             result = handleLawyer(req, res, subParts, query, body, ctx);
-          } else if (body && body.appId) {
+          } else if (body && (body.action || (body.appId && !body.lawyerUserId))) {
             result = handleAinShohay(req, res, 'lawyer', query, body);
-          } else {
+          } else if (body && body.caseId && body.lawyerUserId) {
             result = handleLawyer(req, res, subParts, query, body, ctx);
+          } else if (req.method === 'GET') {
+            result = handleLawyer(req, res, subParts, query, body, ctx);
+          } else {
+            const ashRes = handleAinShohay(req, res, 'lawyer', query, body);
+            result = (ashRes && !ashRes.error) ? ashRes : handleLawyer(req, res, subParts, query, body, ctx);
           }
           break;
         case 'sync':

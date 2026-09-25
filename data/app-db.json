@@ -187,7 +187,21 @@
      "label": "আবেদন জমা হয়েছে"
     }
    ],
-   "createdAt": "2026-09-23T07:15:58.923Z"
+   "createdAt": "2026-09-23T07:15:58.923Z",
+   "linkedGroup": "GRP-MUGW2YD2",
+   "audit": [
+    {
+     "at": "2026-09-25T11:40:24.566Z",
+     "actor": {
+      "id": "dlao.dhaka",
+      "role": "dlao"
+     },
+     "role": "dlao",
+     "action": "case-linked",
+     "detail": "গ্রুপ GRP-MUGW2YD2",
+     "provenance": "staff-entered"
+    }
+   ]
   },
   {
    "appId": "DLAS-NET-2026-04420",
@@ -313,6 +327,162 @@
      "action": "access-denied",
      "detail": "স্পর্শকাতর রেকর্ড — অনুমতি নেই",
      "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:40:24.550Z",
+     "actor": {
+      "id": "dlao.dhaka",
+      "name": "ডিএলএও কর্মকর্তা",
+      "role": "dlao"
+     },
+     "role": "dlao",
+     "action": "lawyer-miss",
+     "detail": "",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:40:24.559Z",
+     "actor": {
+      "id": "dlao.dhaka",
+      "role": "dlao"
+     },
+     "role": "dlao",
+     "action": "jurisdiction-return",
+     "detail": "শ্রম সেল: এখতিয়ার নেই",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:40:24.566Z",
+     "actor": {
+      "id": "dlao.dhaka",
+      "role": "dlao"
+     },
+     "role": "dlao",
+     "action": "case-linked",
+     "detail": "গ্রুপ GRP-MUGW2YD2",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:40:24.583Z",
+     "actor": {
+      "role": "mediator"
+     },
+     "role": "mediator",
+     "action": "esign-prepared",
+     "detail": "দস্তাবেজ হ্যাশ তৈরি",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:40:24.586Z",
+     "actor": {
+      "party": "স্ত্রী"
+     },
+     "role": "system",
+     "action": "esign-signed",
+     "detail": "স্ত্রী — অফলাইনে স্বাক্ষর",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:40:36.298Z",
+     "actor": {
+      "id": "dlao.dhaka",
+      "name": "ডিএলএও কর্মকর্তা",
+      "role": "dlao"
+     },
+     "role": "dlao",
+     "action": "lawyer-miss",
+     "detail": "",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:48:29.127Z",
+     "actor": {
+      "id": "cmubkqu460006lv57f98z49bs",
+      "name": "অ্যাডভোকেট কবির হোসেন",
+      "role": "lawyer"
+     },
+     "role": "lawyer",
+     "action": "lawyer-miss",
+     "detail": "",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:53:51.325Z",
+     "actor": {
+      "id": "cmubkqu440003lv57n11ez0ne",
+      "name": "ফরিদ মিয়া",
+      "role": "helpline"
+     },
+     "role": "helpline",
+     "action": "lawyer-miss",
+     "detail": "",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:53:58.397Z",
+     "actor": {
+      "role": "mediator"
+     },
+     "role": "mediator",
+     "action": "esign-prepared",
+     "detail": "দস্তাবেজ হ্যাশ তৈরি",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:53:58.403Z",
+     "actor": {
+      "party": "স্ত্রী"
+     },
+     "role": "system",
+     "action": "esign-signed",
+     "detail": "স্ত্রী — অফলাইনে স্বাক্ষর",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:53:58.408Z",
+     "actor": {
+      "party": "স্বামী"
+     },
+     "role": "system",
+     "action": "esign-signed",
+     "detail": "স্বামী — অনলাইনে স্বাক্ষর",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:54:01.589Z",
+     "actor": {
+      "id": "cmubkqu440003lv57n11ez0ne",
+      "name": "ফরিদ মিয়া",
+      "role": "helpline"
+     },
+     "role": "helpline",
+     "action": "lawyer-miss",
+     "detail": "",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:54:03.708Z",
+     "actor": {
+      "id": "cmubkqu440003lv57n11ez0ne",
+      "name": "ফরিদ মিয়া",
+      "role": "helpline"
+     },
+     "role": "helpline",
+     "action": "lawyer-miss",
+     "detail": "",
+     "provenance": "staff-entered"
+    },
+    {
+     "at": "2026-09-25T11:54:04.196Z",
+     "actor": {
+      "id": "cmubkqu440003lv57n11ez0ne",
+      "name": "ফরিদ মিয়া",
+      "role": "helpline"
+     },
+     "role": "helpline",
+     "action": "lawyer-miss",
+     "detail": "",
+     "provenance": "staff-entered"
     }
    ],
    "provenance": {
@@ -337,7 +507,51 @@
      }
     ]
    },
-   "caseId": "DLAS-CASE-2026-00902"
+   "caseId": "DLAS-CASE-2026-00902",
+   "lawyer": {
+    "name": "অ্যাডভোকেট কবির হোসেন",
+    "updates": [],
+    "missed": 7,
+    "status": "assigned"
+   },
+   "jurisdiction": {
+    "transfers": [
+     {
+      "returnedFrom": "শ্রম সেল",
+      "reason": "এখতিয়ার নেই",
+      "at": "2026-09-25T11:40:24.559Z"
+     }
+    ],
+    "returns": 1
+   },
+   "linkedGroup": "GRP-MUGW2YD2",
+   "esign": {
+    "signatures": [
+     {
+      "party": "স্ত্রী",
+      "signedAt": "2026-09-25T11:40:24.586Z",
+      "offline": true,
+      "docHash": "312b47d2f0e7bde666144c9d9e57f4355e3b44f57b41a9ba556479aedd62cc2e",
+      "sig": "624b296710122143bf4869c501b9aa2066f292d36426ce2fae467f3cb172538a"
+     },
+     {
+      "party": "স্ত্রী",
+      "signedAt": "2026-09-25T11:53:58.403Z",
+      "offline": true,
+      "docHash": "312b47d2f0e7bde666144c9d9e57f4355e3b44f57b41a9ba556479aedd62cc2e",
+      "sig": "624b296710122143bf4869c501b9aa2066f292d36426ce2fae467f3cb172538a"
+     },
+     {
+      "party": "স্বামী",
+      "signedAt": "2026-09-25T11:53:58.408Z",
+      "offline": false,
+      "docHash": "312b47d2f0e7bde666144c9d9e57f4355e3b44f57b41a9ba556479aedd62cc2e",
+      "sig": "7aa7b889894b594a8b0f71bd188fdf4fa996152dacc370ce858737095244dd28"
+     }
+    ],
+    "docHash": "312b47d2f0e7bde666144c9d9e57f4355e3b44f57b41a9ba556479aedd62cc2e"
+   },
+   "lawyerOverdue": true
   },
   {
    "appId": "DLAS-NET-2026-04421",
@@ -1076,6 +1290,239 @@
    },
    "channel": "assisted",
    "createdAt": "2026-09-24T16:31:47.543Z"
+  },
+  {
+   "appId": "DLAS-NET-2026-04435",
+   "userId": null,
+   "name": "সাখাওয়াত হোসেন",
+   "phone": "01537223981",
+   "nid": "19901234567890123",
+   "district": "ঢাকা",
+   "caseType": "family",
+   "purpose": "new",
+   "emergency": false,
+   "income": null,
+   "deps": null,
+   "problem": "পারিবারিক দেনমোহর ও ভরণপোষণ সংক্রান্ত বিরোধ প্রতিকার চাই।",
+   "office": "জেলা আইনি সহায়তা কার্যালয়, ঢাকা",
+   "sensitive": false,
+   "stage": 0,
+   "history": [
+    {
+     "at": "2026-09-25T10:47:13.904Z",
+     "label": "আবেদন জমা হয়েছে"
+    }
+   ],
+   "tasks": [],
+   "documents": [],
+   "representation": null,
+   "safeContact": null,
+   "failedContacts": [],
+   "audit": [
+    {
+     "at": "2026-09-25T10:47:13.904Z",
+     "actor": {
+      "role": "applicant"
+     },
+     "role": "applicant",
+     "action": "application-created",
+     "detail": "সরাসরি জমা",
+     "provenance": "applicant-confirmed"
+    }
+   ],
+   "provenance": {
+    "name": "applicant-confirmed",
+    "phone": "applicant-confirmed",
+    "nid": "applicant-confirmed",
+    "problem": "applicant-confirmed",
+    "income": "applicant-confirmed"
+   },
+   "channel": "assisted",
+   "createdAt": "2026-09-25T10:47:13.904Z"
+  },
+  {
+   "appId": "DLAS-NET-2026-04436",
+   "userId": null,
+   "name": "মোছাঃ ফরিদা বেগম",
+   "phone": "01799887766",
+   "nid": "19901234567890123",
+   "district": "নেত্রকোনা",
+   "caseType": "পারিবারিক ও দেনমোহর বিরোধ",
+   "purpose": "সরকারি খরচে আইনজীবী নিয়োগ",
+   "emergency": true,
+   "income": null,
+   "deps": null,
+   "problem": "স্বামী বিনা কারণে ফেলে রেখে অন্য বিয়ে করেছেন এবং দেনমোহর প্রদান করছেন না।",
+   "office": "জেলা আইনি সহায়তা কার্যালয়, নেত্রকোনা",
+   "sensitive": false,
+   "stage": 1,
+   "history": [
+    {
+     "at": "2026-09-25T11:15:11.521Z",
+     "label": "যোগ্যতা যাচাই চলছে"
+    }
+   ],
+   "tasks": [],
+   "documents": [],
+   "representation": null,
+   "safeContact": null,
+   "failedContacts": [],
+   "audit": [
+    {
+     "at": "2026-09-25T11:15:11.521Z",
+     "actor": {
+      "role": "applicant"
+     },
+     "role": "applicant",
+     "action": "application-created",
+     "detail": "সরাসরি জমা",
+     "provenance": "applicant-confirmed"
+    }
+   ],
+   "provenance": {
+    "name": "applicant-confirmed",
+    "phone": "applicant-confirmed",
+    "nid": "applicant-confirmed",
+    "problem": "applicant-confirmed",
+    "income": "applicant-confirmed"
+   },
+   "channel": "assisted",
+   "createdAt": "2026-09-25T11:15:11.521Z"
+  },
+  {
+   "appId": "DLAS-NET-2026-04437",
+   "userId": null,
+   "name": "মোছাঃ ফরিদা বেগম",
+   "phone": "01799887766",
+   "nid": "19901234567890123",
+   "district": "নেত্রকোনা",
+   "caseType": "পারিবারিক ও দেনমোহর বিরোধ",
+   "purpose": "সরকারি খরচে আইনজীবী নিয়োগ",
+   "emergency": true,
+   "income": null,
+   "deps": null,
+   "problem": "স্বামী বিনা কারণে ফেলে রেখে অন্য বিয়ে করেছেন এবং দেনমোহর প্রদান করছেন না।",
+   "office": "জেলা আইনি সহায়তা কার্যালয়, নেত্রকোনা",
+   "sensitive": false,
+   "stage": 1,
+   "history": [
+    {
+     "at": "2026-09-25T11:16:36.193Z",
+     "label": "যোগ্যতা যাচাই চলছে"
+    }
+   ],
+   "tasks": [],
+   "documents": [],
+   "representation": null,
+   "safeContact": null,
+   "failedContacts": [],
+   "audit": [
+    {
+     "at": "2026-09-25T11:16:36.193Z",
+     "actor": {
+      "role": "applicant"
+     },
+     "role": "applicant",
+     "action": "application-created",
+     "detail": "সরাসরি জমা",
+     "provenance": "applicant-confirmed"
+    }
+   ],
+   "provenance": {
+    "name": "applicant-confirmed",
+    "phone": "applicant-confirmed",
+    "nid": "applicant-confirmed",
+    "problem": "applicant-confirmed",
+    "income": "applicant-confirmed"
+   },
+   "channel": "assisted",
+   "createdAt": "2026-09-25T11:16:36.193Z"
+  },
+  {
+   "appId": "DLAS-NET-2026-04438",
+   "userId": null,
+   "name": "মোছাঃ ফরিদা বেগম",
+   "phone": "01799887766",
+   "nid": "19901234567890123",
+   "district": "নেত্রকোনা",
+   "caseType": "পারিবারিক ও দেনমোহর বিরোধ",
+   "purpose": "সরকারি খরচে আইনজীবী নিয়োগ",
+   "emergency": true,
+   "income": null,
+   "deps": null,
+   "problem": "স্বামী বিনা কারণে ফেলে রেখে অন্য বিয়ে করেছেন এবং দেনমোহর প্রদান করছেন না।",
+   "office": "জেলা আইনি সহায়তা কার্যালয়, নেত্রকোনা",
+   "sensitive": false,
+   "stage": 1,
+   "history": [
+    {
+     "at": "2026-09-25T11:17:36.903Z",
+     "label": "যোগ্যতা যাচাই চলছে"
+    }
+   ],
+   "tasks": [],
+   "documents": [],
+   "representation": null,
+   "safeContact": null,
+   "failedContacts": [],
+   "audit": [
+    {
+     "at": "2026-09-25T11:17:36.903Z",
+     "actor": {
+      "role": "applicant"
+     },
+     "role": "applicant",
+     "action": "application-created",
+     "detail": "সরাসরি জমা",
+     "provenance": "applicant-confirmed"
+    }
+   ],
+   "provenance": {
+    "name": "applicant-confirmed",
+    "phone": "applicant-confirmed",
+    "nid": "applicant-confirmed",
+    "problem": "applicant-confirmed",
+    "income": "applicant-confirmed"
+   },
+   "channel": "assisted",
+   "createdAt": "2026-09-25T11:17:36.903Z"
+  },
+  {
+   "appId": "DLAS-NET-2026-04439",
+   "userId": null,
+   "name": "নুচিং মারমা",
+   "phone": "01900000001",
+   "nid": "",
+   "district": "খাগড়াছড়ি",
+   "caseType": "ভূমি",
+   "problem": "অফলাইন টেস্ট ১",
+   "emergency": false,
+   "stage": 0,
+   "offlineCreated": true,
+   "tempUuid": "uuid-demo-1",
+   "provenanceTags": {
+    "source": "udc-assisted",
+    "connectivity": "offline-created"
+   },
+   "history": [
+    {
+     "at": "2026-09-25T11:40:24.576Z",
+     "label": "আবেদন জমা হয়েছে (অফলাইনে তৈরি)"
+    }
+   ],
+   "audit": [
+    {
+     "at": "2026-09-25T11:40:24.577Z",
+     "actor": {
+      "role": "udc"
+     },
+     "role": "udc",
+     "action": "offline-sync",
+     "detail": "অফলাইনে তৈরি রেকর্ড সিঙ্ক হয়েছে",
+     "provenance": "intermediary-translated"
+    }
+   ],
+   "createdAt": "2026-09-25T11:40:24.577Z"
   }
  ],
  "complaints": [],
@@ -1289,11 +1736,21 @@
    "q": "hi",
    "at": "2026-09-24T16:49:48.662Z",
    "matched": "greeting"
+  },
+  {
+   "q": "hi",
+   "at": "2026-09-25T11:36:07.731Z",
+   "matched": "greeting"
+  },
+  {
+   "q": "amak name eki",
+   "at": "2026-09-25T11:36:13.124Z",
+   "matched": false
   }
  ],
  "otps": {},
  "counters": {
-  "application": 4434,
+  "application": 4439,
   "complaint": 100,
   "user": 10,
   "case": 904
@@ -1303,6 +1760,23 @@
    "clientId": "idem-test-1",
    "appId": "DLAS-NET-2026-04426",
    "at": "2026-09-23T09:21:40.213Z"
+  },
+  {
+   "clientId": "uuid-demo-1",
+   "appId": "DLAS-NET-2026-04439",
+   "at": "2026-09-25T11:40:24.577Z"
   }
- ]
+ ],
+ "linkedGroups": {
+  "GRP-MUGW2YD2": {
+   "appIds": [
+    "DLAS-NET-2026-04419",
+    "DLAS-NET-2026-04420"
+   ],
+   "sharedEvidence": "অগ্নিকাণ্ডের সাধারণ রিপোর্ট",
+   "createdAt": "2026-09-25T11:40:24.566Z",
+   "createdBy": "dlao.dhaka",
+   "note": "লিংক করা হয়েছে — মার্জ নয়; গোপনীয়তা ও ফলাফল কেস-স্পেসিফিক"
+  }
+ }
 }

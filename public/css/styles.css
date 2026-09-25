@@ -2957,6 +2957,524 @@ img, svg { vertical-align: middle; }
   transform: translateY(-2px);
 }
 
+/* ==========================================================================
+   1. Home Page Reference Inspired Service Cards (Google Doc Item 1 / Image 2)
+   ========================================================================== */
+.ref-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin: 2rem 0 3rem;
+}
+@media (max-width: 900px) {
+  .ref-services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+.ref-svc-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 2.2rem 1.8rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.ref-svc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+  border-color: #CBD5E1;
+}
+.ref-svc-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.85rem;
+  margin-bottom: 1.25rem;
+  transition: transform 0.2s ease;
+}
+.ref-svc-card:hover .ref-svc-icon-box {
+  transform: scale(1.08);
+}
+.icon-box-gold {
+  background: #FEF3C7;
+  color: #B45309;
+}
+.icon-box-green {
+  background: #D1FAE5;
+  color: #065F46;
+}
+.icon-box-orange {
+  background: #FFEDD5;
+  color: #C2410C;
+}
+.ref-svc-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0F2D24;
+  margin: 0 0 0.65rem;
+  line-height: 1.35;
+}
+.ref-svc-card p {
+  font-size: 0.94rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  flex: 1;
+}
+.ref-svc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: #00543E;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: auto;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.ref-svc-link:hover {
+  background: #E8F5E9;
+  color: #003B2B;
+}
+.ref-svc-bottom-bar {
+  width: 65px;
+  height: 3.5px;
+  border-radius: 2px;
+  margin-top: 1.4rem;
+  transition: width 0.3s ease;
+}
+.ref-svc-card:hover .ref-svc-bottom-bar {
+  width: 100px;
+}
+.bar-gold {
+  background: #EAB308;
+}
+.bar-green {
+  background: #00543E;
+}
+.bar-orange {
+  background: #EA580C;
+}
+
+/* ==========================================================================
+   2. 64 District Legal Aid Offices & Live Bangladesh Map (Item 2 / Image 5)
+   ========================================================================== */
+.offices-split-layout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  align-items: start;
+}
+@media (max-width: 960px) {
+  .offices-split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+.offices-list-container {
+  display: flex;
+  flex-direction: column;
+}
+.offices-search-box {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: #FFFFFF;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.offices-search-box:focus {
+  border-color: var(--gov-green);
+  box-shadow: 0 0 0 3px rgba(0, 84, 62, 0.12);
+}
+.offices-scroll-list {
+  max-height: 560px;
+  overflow-y: auto;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.offices-scroll-list::-webkit-scrollbar {
+  width: 6px;
+}
+.offices-scroll-list::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+.offices-scroll-list::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+.office-card-single {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  text-align: left;
+}
+.office-card-single:hover {
+  border-color: #94A3B8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+.office-card-single.active {
+  border-color: #00543E;
+  border-left: 4px solid #00543E;
+  background: #F0FDF4;
+  box-shadow: 0 4px 16px rgba(0, 84, 62, 0.12);
+}
+.office-card-single h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0F2D24;
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+.office-card-addr {
+  font-size: 0.86rem;
+  color: #64748B;
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+.office-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.84rem;
+  color: #334155;
+  margin-bottom: 10px;
+}
+.office-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.office-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.office-card-actions a {
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-office-call {
+  background: #FFFFFF;
+  border: 1px solid #00543E;
+  color: #00543E;
+  transition: all 0.2s;
+}
+.btn-office-call:hover {
+  background: #00543E;
+  color: #FFFFFF;
+}
+.btn-office-apply {
+  background: #00543E;
+  border: 1px solid #00543E;
+  color: #FFFFFF;
+}
+.btn-office-apply:hover {
+  background: #003B2B;
+}
+.offices-map-container {
+  height: 560px;
+  width: 100%;
+  border-radius: 14px;
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   3. Services Page Top 3 Cards (Item 3 / Image 6)
+   ========================================================================== */
+.services-top3-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin: 1.5rem 0 3rem;
+}
+@media (max-width: 900px) {
+  .services-top3-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.svc-top-card {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.svc-top-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: #CBD5E1;
+}
+.svc-top-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.svc-top-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.badge-gold {
+  background: #FEF3C7;
+  color: #B45309;
+}
+.badge-green {
+  background: #D1FAE5;
+  color: #065F46;
+}
+.badge-orange {
+  background: #FFEDD5;
+  color: #C2410C;
+}
+.svc-top-card h3 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #0F2D24;
+  margin: 0;
+  line-height: 1.35;
+}
+.svc-top-card p {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 1.6rem;
+  flex: 1;
+}
+.svc-btn-action {
+  display: block;
+  text-align: center;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.svc-btn-outline {
+  border: 1.5px solid #00543E;
+  color: #00543E;
+  background: #FFFFFF;
+}
+.svc-btn-outline:hover {
+  background: #00543E;
+  color: #FFFFFF;
+}
+.svc-btn-solid {
+  background: #00543E;
+  border: 1.5px solid #00543E;
+  color: #FFFFFF;
+}
+.svc-btn-solid:hover {
+  background: #003B2B;
+  border-color: #003B2B;
+}
+
+/* ==========================================================================
+   4. Comprehensive Application Dashboard (Backend + UI Requirement 2 & 3)
+   ========================================================================== */
+.dash-toolbar-card {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+.dash-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+.dash-tab-btn {
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.dash-tab-btn:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+.dash-tab-btn.active {
+  background: #00543E;
+  border-color: #00543E;
+  color: #FFFFFF;
+}
+.dash-search-row {
+  display: flex;
+  gap: 10px;
+}
+.dash-search-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  outline: none;
+}
+.dash-search-input:focus {
+  border-color: #00543E;
+  box-shadow: 0 0 0 3px rgba(0,84,62,0.1);
+}
+.app-table-wrap {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.app-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+.app-table th {
+  background: #F8FAFC;
+  padding: 12px 16px;
+  font-weight: 700;
+  color: #334155;
+  border-bottom: 1.5px solid #E2E8F0;
+  white-space: nowrap;
+}
+.app-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #F1F5F9;
+  vertical-align: middle;
+}
+.app-table tr:hover td {
+  background: #F8FAFC;
+}
+.badge-stage {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  display: inline-block;
+}
+.badge-stage-0 { background: #FEF3C7; color: #92400E; } /* Submitted */
+.badge-stage-1 { background: #E0E7FF; color: #3730A3; } /* Under review */
+.badge-stage-2 { background: #DBEAFE; color: #1E40AF; } /* Accepted/Case */
+.badge-stage-3 { background: #FCE7F3; color: #9D174D; } /* Hearing/Mediation */
+.badge-stage-4 { background: #D1FAE5; color: #065F46; } /* Closed/Resolved */
+
+.btn-dash-action {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #CBD5E1;
+  background: #FFFFFF;
+  color: #334155;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-dash-action:hover {
+  background: #00543E;
+  color: #FFFFFF;
+  border-color: #00543E;
+}
+
+/* Modal styles for Application Detail */
+.app-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.app-modal-box {
+  background: #FFFFFF;
+  border-radius: 16px;
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  padding: 2rem;
+  position: relative;
+}
+.app-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #F1F5F9;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748B;
+  transition: background 0.2s;
+}
+.app-modal-close:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+
+
 
 
 

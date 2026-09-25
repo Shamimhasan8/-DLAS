@@ -8,6 +8,13 @@
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#00543E">
   <meta name="description" content="CoU JusticeLab — সমন্বিত ডিজিটাল আইনগত সহায়তা পোর্টাল। সম্পূর্ণ সরকারি খরচে বিনামূল্যে আইনি পরামর্শ, মধ্যস্থতা ও আইনজীবী নিয়োগ।">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) { registration.unregister(); }
+      });
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -133,6 +140,7 @@
         <a href="#/" data-i18n="navHome">হোম</a>
         <a href="#/apply" data-i18n="navApply">আবেদন করুন</a>
         <a href="#/track" data-i18n="navTrack">আবেদন ট্র্যাক করুন</a>
+        <a href="#/dashboard" data-i18n="navDashboard">ড্যাশবোর্ড</a>
         <a href="#/topics" data-i18n="navLibrary">আইনি তথ্য</a>
         <a href="#/services" data-i18n="navServices">সেবাসমূহ</a>
         <a href="#/offices" data-i18n="navOffices">অফিস খুঁজুন</a>

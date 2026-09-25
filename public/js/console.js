@@ -287,19 +287,23 @@ async function pageConsole() {
       hideErr();
       const m = card.dataset.m;
       const out = $('#modOut');
-      const id = appId() || (BOOT.demoAppId || '');
+      const id = appId() || (BOOT && BOOT.demoAppId) || 'DLAS-NET-2026-04420';
       const run = async (label, p) => {
-        const r = await p;
-        out.innerHTML = `<div class="quick-ans"><strong>${label}</strong><pre class="mod-json">${esc(JSON.stringify(r, null, 1))}</pre></div>`;
+        try {
+          const r = await p;
+          out.innerHTML = `<div class="quick-ans"><strong>${label}</strong><pre class="mod-json">${esc(JSON.stringify(r, null, 2))}</pre></div>`;
+        } catch (err) {
+          out.innerHTML = `<div class="form-error"><strong>ত্রুটি:</strong> ${esc(err.message || String(err))}</div>`;
+        }
       };
       if (m === 'miss') return run('T1 — আইনজীবী ২টি আপডেট মিস করলে', apiPost('lawyer', { appId: id, action: 'miss' }));
       if (m === 't2') return run('T2 — জুরিসডিকশন পিং-পং এস্কালেশন', apiPost('jurisdiction', { appId: id, action: 'return', from: 'শ্রম সেল', reason: 'এখতিয়ার নেই' }));
-      if (m === 't3') return run('T3 — লিংক (মার্জ নয়)', apiPost('link_cases', { appIds: [id, id], sharedEvidence: 'অগ্নিকাণ্ডের সাধারণ রিপোর্ট' }).then((r) => r.error ? r : r));
+      if (m === 't3') return run('T3 — লিংক (মার্জ নয়)', apiPost('link_cases', { appIds: [id, 'DLAS-JOY-2026-01120'], sharedEvidence: 'অগ্নিকাণ্ডের সাধারণ রিপোর্ট' }));
       if (m === 't4') return run('T4 — ডুপ্লিকেট চেক (সাইড-বাই-সাইড)', apiPost('duplicate_check', { name: 'ময়ূরী আক্তার', phone: '01700000001', district: 'জয়পুরহাট', caseType: 'পারিবারিক' }));
       if (m === 't5') { location.hash = '#/'; setTimeout(() => window.__chatOpen && window.__chatOpen(), 500); return; }
-      if (m === 't6') return run('T6 — ডকুমেন্ট ব্রিফিং + চেকলিস্ট (মিসিং/অস্পষ্ট ফ্ল্যাগ)', modFetch('/api/doc_brief', { caseType: 'ভূমি', documents: [{ name: 'দলিল-স্ক্যান.pdf', summary: '৭২ ডিমান্ড, খতিয়ান ৯১' }, { name: 'অস্পষ্ট-ছবি.jpg', unclear: true }] }));
-      if (m === 't7') return run('T7 — সেটেলমেন্ট ড্রাফট (AI খসড়া + হিউম্যান রিভিউ)', modFetch('/api/settlement_draft', { kind: 'maintenance', notes: 'মাসিক ৫০০০ টাকা, ৫ তারিখের মধ্যে পরিশোধ' }));
-      if (m === 't8') return run('T8 — মাল্টি-এজেন্ট ট্রায়াজ (৩ এজেন্ট + কনফ্লিক্ট)', modFetch('/api/triage', { caseType: 'পারিবারিক', emergency: true, nid: '', district: 'জয়পুরহাট' }));
+      if (m === 't6') return run('T6 — ডকুমেন্ট ব্রিফিং + চেকলিস্ট (মিসিং/অস্পষ্ট ফ্ল্যাগ)', apiPost('doc_brief', { caseType: 'ভূমি', documents: [{ name: 'দলিল-স্ক্যান.pdf', summary: '৭২ ডিমান্ড, খতিয়ান ৯১' }, { name: 'অস্পষ্ট-ছবি.jpg', unclear: true }] }));
+      if (m === 't7') return run('T7 — সেটেলমেন্ট ড্রাফট (AI খসড়া + হিউম্যান রিভিউ)', apiPost('settlement_draft', { kind: 'maintenance', notes: 'মাসিক ৫০০০ টাকা, ৫ তারিখের মধ্যে পরিশোধ' }));
+      if (m === 't8') return run('T8 — মাল্টি-এজেন্ট ট্রায়াজ (৩ এজেন্ট + কনফ্লিক্ট)', apiPost('triage', { caseType: 'পারিবারিক', emergency: true, nid: '', district: 'জয়পুরহাট' }));
       if (m === 't9') return run('T9 — অফলাইন সিঙ্ক (৩ রেকর্ড, ইউনিক clientId)', apiPost('sync_push', { items: [ { clientId: 'uuid-demo-1', name: 'নুচিং মারমা', phone: '01900000001', district: 'খাগড়াছড়ি', caseType: 'ভূমি', problem: 'অফলাইন টেস্ট ১' }, { clientId: 'uuid-demo-2', name: 'পরীক্ষা কর্মী', phone: '01900000002', district: 'খাগড়াছড়ি', caseType: 'শ্রম', problem: 'অফলাইন টেস্ট ২' }, { clientId: 'uuid-demo-3', name: 'তৃতীয় পরীক্ষা', phone: '01900000003', district: 'খাগড়াছড়ি', caseType: 'পারিবারিক', problem: 'অফলাইন টেস্ট ৩' } ] }));
       if (m === 't10') return run('T10 — PWA ম্যানিফেস্ট', fetch('/api/pwa_manifest').then((r) => r.json()));
       if (m === 't11') {

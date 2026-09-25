@@ -577,25 +577,37 @@ async function pageHome() {
       </div>
 
       <div class="ref-services-grid">
+        <!-- ১. বিনামূল্যে আইনি পরামর্শ -->
         <div class="ref-svc-card">
-          <div class="ref-svc-icon-box">💬</div>
+          <div class="ref-svc-icon-box icon-box-gold">💬</div>
           <h3>${t('freeConsultTitle')}</h3>
           <p>${t('freeConsultDesc')}</p>
-          <a class="ref-svc-link" href="#/guide">${t('freeConsultBtn')}</a>
+          <a class="ref-svc-link" href="#/guide">
+            <span>${t('freeConsultBtn')}</span> <span>→</span>
+          </a>
+          <div class="ref-svc-bottom-bar bar-gold"></div>
         </div>
 
+        <!-- ২. সরকারি খরচে আইনজীবী নিয়োগ -->
         <div class="ref-svc-card">
-          <div class="ref-svc-icon-box">⚖️</div>
+          <div class="ref-svc-icon-box icon-box-green">⚖️</div>
           <h3>${t('lawyerAppTitle')}</h3>
           <p>${t('lawyerAppDesc')}</p>
-          <a class="ref-svc-link" href="#/apply">${t('lawyerAppBtn')}</a>
+          <a class="ref-svc-link" href="#/apply">
+            <span>${t('lawyerAppBtn')}</span> <span>→</span>
+          </a>
+          <div class="ref-svc-bottom-bar bar-green"></div>
         </div>
 
+        <!-- ৩. বিকল্প বিরোধ নিষ্পত্তি (ADR) -->
         <div class="ref-svc-card">
-          <div class="ref-svc-icon-box">🤝</div>
+          <div class="ref-svc-icon-box icon-box-orange">🤝</div>
           <h3>${t('adrServiceTitle')}</h3>
           <p>${t('adrServiceDesc')}</p>
-          <a class="ref-svc-link" href="#/apply?purpose=mediation">${t('adrServiceBtn')}</a>
+          <a class="ref-svc-link" href="#/apply?purpose=mediation">
+            <span>${t('adrServiceBtn')}</span> <span>→</span>
+          </a>
+          <div class="ref-svc-bottom-bar bar-orange"></div>
         </div>
       </div>
     </div>
@@ -746,84 +758,48 @@ async function pageServices() {
   app.innerHTML = `
   <div class="container page-head">
     <span class="section-tag">সরকারি আইনি সেবা</span>
-    <h1>⚖️ ${t('servicesTitle')}</h1>
-    <p>${t('servicesSubtitle')}</p>
+    <h1>⚖️ ${t('servicesTitle') || 'আমাদের আইনি সেবাসমূহ'}</h1>
+    <p>${t('servicesSubtitle') || 'লিগ্যাল এইড অফিস থেকে আপনি যেসব সেবা সম্পূর্ণ বিনামূল্যে পেতে পারেন'}</p>
   </div>
   <div class="container">
-    <div class="services-grid" style="margin-bottom:2.5rem">
-      <!-- ১. বিনামূল্যে আইনি পরামর্শ (working button -> #/guide) -->
-      <div class="service-card">
-        <div class="service-head">
-          <div class="service-icon-box">💬</div>
+    <div class="services-top3-grid">
+      <!-- ১. বিনামূল্যে আইনি পরামর্শ -->
+      <div class="svc-top-card">
+        <div class="svc-top-header">
+          <div class="ref-svc-icon-badge icon-box-gold">💬</div>
           <div>
-            <span class="service-tag-badge">পরামর্শ</span>
-            <h3>${t('freeConsultTitle')}</h3>
+            <span class="svc-top-badge badge-gold">পরামর্শ</span>
+            <h3>${t('freeConsultTitle') || 'বিনামূল্যে আইনি পরামর্শ'}</h3>
           </div>
         </div>
-        <p>${t('freeConsultDesc')}</p>
-        <a class="btn btn-outline btn-block" href="#/guide">${t('freeConsultBtn')}</a>
+        <p>${t('freeConsultDesc') || 'পারিবারিক, জমিজমা, যৌতুক বা ফৌজদারি বিষয়ে টোল-ফ্রি ১৬৬৯৯ হেল্পলাইন ও এআই গাইডের মাধ্যমে তাত্ক্ষণিক আইনি পরামর্শ।'}</p>
+        <a class="svc-btn-action svc-btn-outline" href="#/guide">সরাসরি আইনি পরামর্শ নিন</a>
       </div>
 
       <!-- ২. সরকারি খরচে আইনজীবী নিয়োগ -->
-      <div class="service-card">
-        <div class="service-head">
-          <div class="service-icon-box">⚖️</div>
+      <div class="svc-top-card">
+        <div class="svc-top-header">
+          <div class="ref-svc-icon-badge icon-box-green">⚖️</div>
           <div>
-            <span class="service-tag-badge">আইনজীবী নিয়োগ</span>
-            <h3>${t('lawyerAppTitle')}</h3>
+            <span class="svc-top-badge badge-green">আইনজীবী নিয়োগ</span>
+            <h3>${t('lawyerAppTitle') || 'সরকারি খরচে আইনজীবী নিয়োগ'}</h3>
           </div>
         </div>
-        <p>${t('lawyerAppDesc')}</p>
-        <a class="btn btn-primary btn-block" href="#/apply">${t('lawyerAppBtn')}</a>
+        <p>${t('lawyerAppDesc') || 'আদালতে মামলা পরিচালনা ও জামিনের জন্য অসচ্ছল নাগরিকদের সম্পূর্ণ রাষ্ট্রীয় খরচে অভিজ্ঞ আইনজীবী প্রদান।'}</p>
+        <a class="svc-btn-action svc-btn-solid" href="#/apply">আইনজীবী পেতে আবেদন করুন</a>
       </div>
 
-      <!-- ৩. বিকল্প বিরোধ নিষ্পত্তি (ADR) (working -> #/apply?purpose=mediation) -->
-      <div class="service-card">
-        <div class="service-head">
-          <div class="service-icon-box">🤝</div>
+      <!-- ৩. বিকল্প বিরোধ নিষ্পত্তি (ADR) -->
+      <div class="svc-top-card">
+        <div class="svc-top-header">
+          <div class="ref-svc-icon-badge icon-box-orange">🤝</div>
           <div>
-            <span class="service-tag-badge">ADR</span>
-            <h3>${t('adrServiceTitle')}</h3>
+            <span class="svc-top-badge badge-orange">ADR</span>
+            <h3>${t('adrServiceTitle') || 'বিকল্প বিরোধ নিষ্পত্তি (ADR)'}</h3>
           </div>
         </div>
-        <p>${t('adrServiceDesc')}</p>
-        <a class="btn btn-outline btn-block" href="#/apply?purpose=mediation">${t('adrServiceBtn')}</a>
-      </div>
-
-      <!-- ৪. পারিবারিক ও দেনমোহর বিরোধ (Unnecessary action button removed) -->
-      <div class="service-card">
-        <div class="service-head">
-          <div class="service-icon-box">🛡️</div>
-          <div>
-            <span class="service-tag-badge">পারিবারিক</span>
-            <h3>${t('familyServiceTitle')}</h3>
-          </div>
-        </div>
-        <p>${t('familyServiceDesc')}</p>
-      </div>
-
-      <!-- ৫. ভূমি ও সম্পত্তি বিরোধ প্রতিকার (Unnecessary action button removed) -->
-      <div class="service-card">
-        <div class="service-head">
-          <div class="service-icon-box">📜</div>
-          <div>
-            <span class="service-tag-badge">ভূমি</span>
-            <h3>${t('landServiceTitle')}</h3>
-          </div>
-        </div>
-        <p>${t('landServiceDesc')}</p>
-      </div>
-
-      <!-- ৬. কারাবন্দী ও জামিন সহায়তা (Unnecessary action button removed) -->
-      <div class="service-card">
-        <div class="service-head">
-          <div class="service-icon-box">🚨</div>
-          <div>
-            <span class="service-tag-badge">কারা অধিকার</span>
-            <h3>${t('jailServiceTitle')}</h3>
-          </div>
-        </div>
-        <p>${t('jailServiceDesc')}</p>
+        <p>${t('adrServiceDesc') || 'মামলা-মোকদ্দমা ছাড়াই আপস-মীমাংসার মাধ্যমে পারিবারিক ও দেওয়ানি বিরোধের দ্রুত ও স্থায়ী সমাধান।'}</p>
+        <a class="svc-btn-action svc-btn-outline" href="#/apply?purpose=mediation">ADR এর জন্য আবেদন করুন</a>
       </div>
     </div>
   </div>`;
@@ -1610,13 +1586,19 @@ async function pageApply(queryStr) {
       const stored = JSON.parse(localStorage.getItem('dlas_my_apps') || '[]');
       stored.unshift({
         appId: finalAppId,
-        caseType: d.caseType,
-        district: d.district,
+        name: d.name || 'আবেদনকারী',
+        phone: d.phone || '',
+        caseType: d.caseType || 'পারিবারিক/সাধারণ',
+        purpose: d.purpose || 'আইনজীবী নিয়োগ',
+        district: d.district || '',
         submittedAt: new Date().toISOString(),
         status: 'অপেক্ষমাণ (UNDER_REVIEW)',
-        stage: 0
+        stage: 0,
+        problem: d.problem || d.facts || '',
+        oppName: d.oppName || '',
+        emergency: !!d.emergency
       });
-      localStorage.setItem('dlas_my_apps', JSON.stringify(stored.slice(0, 30)));
+      localStorage.setItem('dlas_my_apps', JSON.stringify(stored.slice(0, 50)));
     } catch (e) {}
 
     app.innerHTML = `
@@ -1659,94 +1641,344 @@ async function pageApply(queryStr) {
   }
 }
 
-// ---------- ৭. নাগরিক ড্যাশবোর্ড (pageDashboard) ----------
+// ---------- ৭. নাগরিক ও সার্বিক ড্যাশবোর্ড (pageDashboard) ----------
 async function pageDashboard() {
   const localApps = JSON.parse(localStorage.getItem('dlas_my_apps') || '[]');
   let serverApps = [];
 
-  if (ME) {
-    try {
-      const r = await apiGet('applications');
-      serverApps = r.applications || [];
-    } catch (e) {}
+  try {
+    const r = await apiGet('applications');
+    serverApps = r.applications || [];
+  } catch (e) {
+    console.warn('Failed to load server applications:', e);
   }
 
-  // Merge unique by appId
+  // Merge server and local applications uniquely by appId
   const combinedMap = new Map();
-  serverApps.forEach(a => combinedMap.set(a.appId, a));
+  serverApps.forEach(a => { if (a && a.appId) combinedMap.set(a.appId, a); });
   localApps.forEach(a => {
-    if (!combinedMap.has(a.appId)) combinedMap.set(a.appId, a);
+    if (a && a.appId) {
+      if (combinedMap.has(a.appId)) {
+        combinedMap.set(a.appId, Object.assign({}, combinedMap.get(a.appId), a));
+      } else {
+        combinedMap.set(a.appId, a);
+      }
+    }
   });
-  const apps = Array.from(combinedMap.values());
 
-  const stageIcons = ['📝', '🔍', '⚖️', '🤝', '✅'];
+  let allApps = Array.from(combinedMap.values());
+
+  // Default seed apps if completely empty
+  if (!allApps.length) {
+    allApps = [
+      {
+        appId: 'DLAS-NET-2026-04420',
+        name: 'ময়ূরী আক্তার',
+        phone: '01711223344',
+        district: 'নেত্রকোনা',
+        caseType: 'পারিবারিক ও দেনমোহর বিরোধ',
+        purpose: 'সরকারি খরচে আইনজীবী নিয়োগ',
+        submittedAt: '2026-09-18T10:30:00Z',
+        stage: 1,
+        status: 'পর্যালোচনাধীন (UNDER_REVIEW)',
+        emergency: false,
+        problem: 'স্বামী দীর্ঘদিন যাবৎ কোনো ভরণপোষণ দিচ্ছেন না এবং যৌতুকের দাবিতে নির্যাতন করছেন।'
+      },
+      {
+        appId: 'DLAS-JOY-2026-01120',
+        name: 'রফিকুল ইসলাম',
+        phone: '01812345678',
+        district: 'জয়পুরহাট',
+        caseType: 'ভূমি ও সম্পত্তি বিরোধ',
+        purpose: 'বিকল্প বিরোধ নিষ্পত্তি (ADR)',
+        submittedAt: '2026-09-20T14:15:00Z',
+        stage: 3,
+        status: 'মধ্যস্থতা প্রক্রিয়া চলমান (MEDIATION)',
+        emergency: false,
+        problem: 'পৈতৃক ভিটেমাটির সীমানা নির্ধারণ নিয়ে প্রতিবেশীর সঙ্গে বিরোধ।'
+      },
+      {
+        appId: 'DLAS-DHK-2026-00812',
+        name: 'সাহেদা বেগম',
+        phone: '01998877665',
+        district: 'ঢাকা',
+        caseType: 'নারী ও শিশু নির্যাতন দমন',
+        purpose: 'সরকারি খরচে আইনজীবী নিয়োগ',
+        submittedAt: '2026-09-22T09:00:00Z',
+        stage: 2,
+        status: 'আইনজীবী নির্ধারিত (LAWYER_ASSIGNED)',
+        emergency: true,
+        problem: 'যৌতুক ও পারিবারিক সহিংসতার শিকার, দ্রুত জামিন ও আইনি সুরক্ষার আবেদন।'
+      }
+    ];
+  }
+
+  // Stage styling helpers
+  const stageBadges = [
+    { label: '📝 নতুন দাখিল', cls: 'badge-stage-0' },
+    { label: '🔍 পর্যালোচনাধীন', cls: 'badge-stage-1' },
+    { label: '⚖️ আইনজীবী নির্ধারিত', cls: 'badge-stage-2' },
+    { label: '🤝 মধ্যস্থতা/শুনানি', cls: 'badge-stage-3' },
+    { label: '✅ নিষ্পত্তি সম্পন্ন', cls: 'badge-stage-4' }
+  ];
+
+  let currentTab = 'all';
+  let currentSearch = '';
 
   app.innerHTML = `
   <div class="container page-head">
     <div class="dash-hero">
-      <div class="dash-avatar">👤</div>
+      <div class="dash-avatar">⚖️</div>
       <div>
-        <h1>${t('dashTitle')}</h1>
-        <p>${ME ? 'স্বাগতম, <strong>' + esc(ME.name || 'নাগরিক') + '</strong>!' : 'আপনার দাখিলকৃত আবেদনের রিয়েলটাইম অবস্থা ও ইতিহাস'}</p>
+        <h1>আইনি সহায়তা ড্যাশবোর্ড</h1>
+        <p>${ME ? 'স্বাগতম, <strong>' + esc(ME.name || 'সম্মানিত ব্যবহারকারী') + '</strong>! (' + esc(ME.role || 'নাগরিক') + ')' : 'দাখিলকৃত সকল আবেদন, আইনজীবী নিয়োগ ও মধ্যস্থতার সরাসরি অবস্থা'}</p>
       </div>
-      ${ME ? `<button class="btn btn-outline btn-sm" id="d_logout" style="margin-left:auto">${t('logout')}</button>` : `<a class="btn btn-primary btn-sm" href="#/login" style="margin-left:auto">লগইন করুন</a>`}
+      <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn btn-primary btn-sm" href="#/apply">+ নতুন আবেদন দাখিল</a>
+        ${ME ? `<button class="btn btn-outline btn-sm" id="d_logout">${t('logout')}</button>` : `<a class="btn btn-outline btn-sm" href="#/login">লগইন</a>`}
+      </div>
     </div>
   </div>
+
   <div class="container">
-    <div class="dash-grid">
+    <!-- পরিসংখ্যান কার্ডসমূহ -->
+    <div class="dash-grid" id="dashStatsGrid">
       <div class="stat-card">
         <h3>মোট আবেদন</h3>
-        <div class="stat-num">${bnNum(apps.length)}</div>
+        <div class="stat-num" id="statTotal">${bnNum(allApps.length)}</div>
       </div>
       <div class="stat-card">
-        <h3>চলমান / পর্যালোচনায়</h3>
-        <div class="stat-num">${bnNum(apps.filter(a => (a.stage || 0) < 4).length)}</div>
+        <h3>পর্যালোচনাধীন</h3>
+        <div class="stat-num" id="statReview">${bnNum(allApps.filter(a => (a.stage === 0 || a.stage === 1)).length)}</div>
+      </div>
+      <div class="stat-card">
+        <h3>আদালত / মধ্যস্থতায়</h3>
+        <div class="stat-num" id="statActive">${bnNum(allApps.filter(a => (a.stage === 2 || a.stage === 3)).length)}</div>
       </div>
       <div class="stat-card">
         <h3>নিষ্পত্তি সম্পন্ন</h3>
-        <div class="stat-num">${bnNum(apps.filter(a => (a.stage || 0) >= 4).length)}</div>
-      </div>
-      <div class="stat-card">
-        <h3>জরুরি সহায়তা</h3>
-        <div class="stat-num">${bnNum(apps.filter(a => a.emergency).length)}</div>
+        <div class="stat-num" id="statClosed">${bnNum(allApps.filter(a => (a.stage || 0) >= 4).length)}</div>
       </div>
     </div>
 
-    <div class="dash-head-row" style="margin:2rem 0 1rem;display:flex;justify-content:space-between;align-items:center">
-      <h2>${t('myApps')}</h2>
-      <a class="btn btn-primary btn-sm" href="#/apply">+ নতুন আবেদন দাখিল করুন</a>
+    <!-- টুলবার: ফিল্টার ও রিয়েলটাইম সার্চ -->
+    <div class="dash-toolbar-card">
+      <div class="dash-filter-tabs">
+        <button type="button" class="dash-tab-btn active" data-tab="all">সকল আবেদন (${bnNum(allApps.length)})</button>
+        <button type="button" class="dash-tab-btn" data-tab="new">নতুন দাখিল (${bnNum(allApps.filter(a => (a.stage === 0)).length)})</button>
+        <button type="button" class="dash-tab-btn" data-tab="review">পর্যালোচনাধীন (${bnNum(allApps.filter(a => a.stage === 1).length)})</button>
+        <button type="button" class="dash-tab-btn" data-tab="lawyer">আইনজীবী নিয়োগ</button>
+        <button type="button" class="dash-tab-btn" data-tab="adr">মধ্যস্থতা (ADR)</button>
+        <button type="button" class="dash-tab-btn" data-tab="emergency">🚨 জরুরি (${bnNum(allApps.filter(a => a.emergency).length)})</button>
+      </div>
+      <div class="dash-search-row">
+        <input type="text" id="dashSearchInput" class="dash-search-input" placeholder="আবেদন আইডি, নাম, ফোন নম্বর বা জেলা লিখে খুঁজুন..." autocomplete="off">
+      </div>
     </div>
 
-    ${apps.length ? `
-      <div class="myapps">
-        ${apps.map(a => `
-          <a class="app-card" href="#/track?id=${encodeURIComponent(a.appId)}&last4=3344" style="text-decoration:none;color:inherit">
-            <span class="app-stage-icon">${stageIcons[a.stage || 0] || '📝'}</span>
-            <span class="app-main">
-              <span class="app-id">${esc(a.appId)}</span>
-              <span class="app-meta">
-                ${esc(a.caseType || 'পারিবারিক/সাধারণ')} · ${a.district ? esc(a.district) + ' · ' : ''}দাখিল: ${new Date(a.submittedAt || a.createdAt || Date.now()).toLocaleDateString('bn-BD')}
-              </span>
-            </span>
-            <span class="app-right">
-              <span class="badge ${(a.stage || 0) >= 4 ? 'success' : 'warn'}">
-                ${(a.stage || 0) >= 4 ? 'নিষ্পত্তি সম্পন্ন' : 'চলমান (UNDER REVIEW)'}
-              </span>
-              <span class="app-chevron">›</span>
-            </span>
-          </a>
-        `).join('')}
-      </div>
-    ` : `
-      <div class="empty-state">
-        ${t('noApps')}
-        <div style="margin-top:12px">
-          <a class="btn btn-primary" href="#/apply">নতুন আবেদন করুন →</a>
+    <!-- টেবিল ও তালিকা কন্টেইনার -->
+    <div id="dashAppsContainer"></div>
+  </div>
+
+  <!-- বিস্তারিত মডাল কন্টেইনার -->
+  <div id="appDetailModalWrap"></div>
+  `;
+
+  const container = $('#dashAppsContainer');
+  const modalWrap = $('#appDetailModalWrap');
+
+  function showAppDetail(a) {
+    const st = stageBadges[a.stage || 0] || stageBadges[0];
+    const subDate = a.submittedAt ? new Date(a.submittedAt).toLocaleString('bn-BD', { dateStyle: 'long', timeStyle: 'short' }) : '২০২৬';
+    
+    modalWrap.innerHTML = `
+      <div class="app-modal-overlay" id="modalOverlay">
+        <div class="app-modal-box">
+          <button class="app-modal-close" id="btnModalClose">✕</button>
+          
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem;flex-wrap:wrap">
+            <span class="badge info" style="font-size:1rem;font-family:monospace;font-weight:700">${esc(a.appId)}</span>
+            <span class="badge-stage ${st.cls}">${st.label}</span>
+            ${a.emergency ? `<span class="badge warn">🚨 জরুরি সেবা</span>` : ''}
+          </div>
+
+          <h2 style="font-size:1.35rem;color:#0F2D24;margin-bottom:1.25rem">📋 আবেদন বিবরণী ও সার্বিক অবস্থা</h2>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:1.2rem;margin-bottom:1.2rem;font-size:0.92rem">
+            <div><strong>আবেদনকারীর নাম:</strong> ${esc(a.name || 'নাগরিক')}</div>
+            <div><strong>মোবাইল নম্বর:</strong> ${esc(a.phone || '–')}</div>
+            <div><strong>জেলা:</strong> ${esc(a.district || '–')}</div>
+            <div><strong>উপজেলা/ইউনিয়ন:</strong> ${esc(a.upazila || a.union || 'সদর')}</div>
+            <div><strong>বিরোধের ধরন:</strong> ${esc(a.caseType || 'পারিবারিক/সাধারণ')}</div>
+            <div><strong>সেবার উদ্দেশ্য:</strong> ${esc(a.purpose || 'সরকারি খরচে আইনজীবী')}</div>
+            <div style="grid-column:1/-1"><strong>দাখিলের তারিখ:</strong> ${esc(subDate)}</div>
+          </div>
+
+          <div style="margin-bottom:1.2rem">
+            <h4 style="font-size:1rem;margin-bottom:6px;color:#1E293B">ঘটনা ও আইনি দাবির বিবরণ:</h4>
+            <div style="background:#FFFFFF;border:1px solid #CBD5E1;border-radius:8px;padding:1rem;font-size:0.93rem;line-height:1.65;color:#334155">
+              ${esc(a.problem || a.facts || 'আইনি সহায়তা ও পরামর্শ চেয়ে আবেদন দাখিল করা হয়েছে। সংশ্লিষ্ট জেলা লিগ্যাল এইড অফিসার নথি ও তথ্যাবলি যাচাই করছেন।')}
+            </div>
+          </div>
+
+          ${a.oppName ? `
+            <div style="margin-bottom:1.2rem;font-size:0.9rem">
+              <strong>প্রতিপক্ষের তথ্য:</strong> ${esc(a.oppName)} ${a.oppPhone ? '(' + esc(a.oppPhone) + ')' : ''}
+            </div>
+          ` : ''}
+
+          <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:1.5rem;flex-wrap:wrap">
+            <a class="btn btn-outline btn-sm" href="#/track?id=${encodeURIComponent(a.appId)}&last4=${encodeURIComponent((a.phone || '3344').slice(-4))}">
+              🔍 সরাসরি লাইভ ট্র্যাক করুন →
+            </a>
+            <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ প্রিন্ট</button>
+            <button class="btn btn-primary btn-sm" id="btnModalOk">ঠিক আছে</button>
+          </div>
         </div>
       </div>
-    `}
-  </div>`;
+    `;
 
+    const close = () => { modalWrap.innerHTML = ''; };
+    $('#btnModalClose').onclick = close;
+    $('#btnModalOk').onclick = close;
+    $('#modalOverlay').onclick = (e) => { if (e.target.id === 'modalOverlay') close(); };
+  }
+
+  function renderTable() {
+    let filtered = allApps;
+
+    // Filter by tab
+    if (currentTab === 'new') {
+      filtered = filtered.filter(a => (a.stage === 0));
+    } else if (currentTab === 'review') {
+      filtered = filtered.filter(a => a.stage === 1);
+    } else if (currentTab === 'lawyer') {
+      filtered = filtered.filter(a => (a.purpose && a.purpose.includes('আইনজীবী')) || (a.caseType && a.caseType.includes('মামলা')));
+    } else if (currentTab === 'adr') {
+      filtered = filtered.filter(a => (a.purpose && a.purpose.includes('মধ্যস্থতা')) || (a.purpose && a.purpose.includes('ADR')) || a.stage === 3);
+    } else if (currentTab === 'emergency') {
+      filtered = filtered.filter(a => a.emergency);
+    }
+
+    // Filter by search query
+    if (currentSearch) {
+      const q = currentSearch.toLowerCase();
+      filtered = filtered.filter(a => 
+        (a.appId || '').toLowerCase().includes(q) ||
+        (a.name || '').toLowerCase().includes(q) ||
+        (a.phone || '').toLowerCase().includes(q) ||
+        (a.district || '').toLowerCase().includes(q) ||
+        (a.caseType || '').toLowerCase().includes(q) ||
+        (a.problem || '').toLowerCase().includes(q)
+      );
+    }
+
+    if (!filtered.length) {
+      container.innerHTML = `
+        <div class="empty-state" style="padding:3rem 1.5rem;background:#FFFFFF;border-radius:14px;border:1.5px solid #E2E8F0">
+          <div style="font-size:2.5rem;margin-bottom:10px">📭</div>
+          <h3>কোনো আবেদন পাওয়া যায়নি</h3>
+          <p style="color:var(--text-muted);margin:8px 0 16px">অনুসন্ধানের শব্দ পরিবর্তন করুন অথবা সরাসরি নতুন আবেদন দাখিল করুন।</p>
+          <a class="btn btn-primary btn-sm" href="#/apply">+ নতুন আবেদন দাখিল করুন</a>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = `
+      <div class="app-table-wrap">
+        <table class="app-table">
+          <thead>
+            <tr>
+              <th>আবেদন ট্র্যাকিং আইডি</th>
+              <th>আবেদনকারীর নাম ও ফোন</th>
+              <th>জেলা</th>
+              <th>সেবার ধরন</th>
+              <th>দাখিলের তারিখ</th>
+              <th>বর্তমান পর্যায়</th>
+              <th style="text-align:right">কার্যক্রম</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${filtered.map(a => {
+              const st = stageBadges[a.stage || 0] || stageBadges[0];
+              const dt = a.submittedAt ? new Date(a.submittedAt).toLocaleDateString('bn-BD') : '২০২৬';
+              const phoneLast4 = (a.phone || '3344').slice(-4);
+              return `
+                <tr data-id="${esc(a.appId)}">
+                  <td>
+                    <span style="font-family:monospace;font-weight:700;color:#00543E;font-size:0.92rem;background:#ECFDF5;padding:3px 8px;border-radius:6px;border:1px solid #A7F3D0">
+                      ${esc(a.appId)}
+                    </span>
+                    ${a.emergency ? `<div style="font-size:0.75rem;color:#DC2626;font-weight:700;margin-top:3px">🚨 জরুরি</div>` : ''}
+                  </td>
+                  <td>
+                    <strong style="color:#0F172A">${esc(a.name || 'নাগরিক')}</strong>
+                    <div style="font-size:0.8rem;color:#64748B">${esc(a.phone || '–')}</div>
+                  </td>
+                  <td>${esc(a.district || '–')}</td>
+                  <td>
+                    <div style="font-weight:600;color:#334155">${esc(a.purpose || 'আইনজীবী নিয়োগ')}</div>
+                    <div style="font-size:0.8rem;color:#64748B">${esc(a.caseType || 'পারিবারিক বিরোধ')}</div>
+                  </td>
+                  <td>${esc(dt)}</td>
+                  <td>
+                    <span class="badge-stage ${st.cls}">${st.label}</span>
+                  </td>
+                  <td style="text-align:right">
+                    <div style="display:inline-flex;gap:6px">
+                      <a class="btn-dash-action" href="#/track?id=${encodeURIComponent(a.appId)}&last4=${encodeURIComponent(phoneLast4)}">
+                        🔍 ট্র্যাক
+                      </a>
+                      <button type="button" class="btn-dash-action btn-view-detail" data-id="${esc(a.appId)}">
+                        📄 বিস্তারিত
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              `;
+            }).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    // Bind detail buttons
+    $$('.btn-view-detail', container).forEach(btn => {
+      btn.onclick = () => {
+        const id = btn.dataset.id;
+        const target = allApps.find(x => x.appId === id);
+        if (target) showAppDetail(target);
+      };
+    });
+  }
+
+  renderTable();
+
+  // Tab filtering
+  $$('.dash-tab-btn').forEach(btn => {
+    btn.onclick = () => {
+      $$('.dash-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentTab = btn.dataset.tab;
+      renderTable();
+    };
+  });
+
+  // Search input
+  const sInput = $('#dashSearchInput');
+  if (sInput) {
+    let sTimer;
+    sInput.oninput = (e) => {
+      clearTimeout(sTimer);
+      sTimer = setTimeout(() => {
+        currentSearch = e.target.value.trim();
+        renderTable();
+      }, 150);
+    };
+  }
+
+  // Logout button
   const logoutBtn = $('#d_logout');
   if (logoutBtn) {
     logoutBtn.onclick = async () => {
@@ -1974,36 +2206,220 @@ async function pageEligibility() {
   };
 }
 
+// ---------- ৬. ৬৪ জেলা লিগ্যাল এইড অফিস ও লাইভ ম্যাপ (pageOffices) ----------
 async function pageOffices() {
-  const offices = (BOOT && BOOT.offices) || [];
+  let offices = (BOOT && BOOT.offices) || [];
+  if (!offices.length) {
+    try {
+      const res = await apiGet('offices');
+      offices = res.offices || [];
+    } catch (e) {}
+  }
+
   app.innerHTML = `
   <div class="container page-head">
     <span class="section-tag">দেশব্যাপী নেটওয়ার্ক</span>
-    <h1>🗺️ ৬৪ জেলা ও বিশেষায়িত লিগ্যাল এইড অফিসসমূহ</h1>
-    <p>প্রতিটি জেলা জজ আদালত ভবনে অবস্থিত লিগ্যাল এইড অফিসে সরাসরি যোগাযোগ করতে পারেন।</p>
-    <div class="search-bar" style="margin-top:1rem;max-width:100%">
-      <input id="offQ" placeholder="জেলার নাম লিখুন — যেমন: জয়পুরহাট, ঢাকা, চট্টগ্রাম...">
-    </div>
+    <h1>🗺️ ৬৪ জেলা লিগ্যাল এইড অফিস ও লাইভ ম্যাপ</h1>
+    <p>আপনার নিকটস্থ জেলা জজ আদালত ভবনে অবস্থিত লিগ্যাল এইড অফিসে সরাসরি যোগাযোগ করুন বা ম্যাপে অবস্থান দেখুন।</p>
   </div>
   <div class="container">
-    <div class="services-grid" id="offGrid"></div>
+    <div class="offices-split-layout">
+      <!-- বাম কলাম: সার্চ ও স্ক্রলেবল তালিকা -->
+      <div class="offices-list-container">
+        <input type="text" id="offSearch" class="offices-search-box" placeholder="জেলার নাম লিখুন — যেমন: নেত্রকোনা, জয়পুরহাট, ঢাকা..." autocomplete="off">
+        <div id="offCount" style="font-size:0.88rem;color:var(--text-muted);margin-bottom:0.75rem;font-weight:600"></div>
+        <div class="offices-scroll-list" id="offList"></div>
+      </div>
+
+      <!-- ডান কলাম: লাইভ ইন্টারঅ্যাক্টিভ ম্যাপ -->
+      <div>
+        <div class="offices-map-container" id="districtMap"></div>
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;display:flex;justify-content:space-between">
+          <span>💡 তালিকায় বা ম্যাপের পিনে ক্লিক করে সরাসরি লোকেশন ও তথ্য দেখুন।</span>
+          <span>সর্বমোট ${bnNum(offices.length)}টি কেন্দ্র</span>
+        </div>
+      </div>
+    </div>
   </div>`;
 
-  const render = (q = '') => {
-    const matched = offices.filter(o => !q || (o.name + ' ' + o.district + ' ' + (o.address || '')).toLowerCase().includes(q.toLowerCase()));
-    $('#offGrid').innerHTML = matched.map(o => `
-      <div class="service-card">
-        <h3>🏛️ ${esc(o.name)}</h3>
-        <p style="font-size:0.88rem;color:var(--text-muted);margin:6px 0">${esc(o.address || 'জেলা জজ আদালত ভবন')}</p>
-        <div style="font-size:0.85rem;margin-top:8px"><strong>ফোন:</strong> ${esc(o.phone || '১৬৬৯৯')}</div>
-        <div style="font-size:0.85rem"><strong>সময়:</strong> রবিবার–বৃহস্পতিবার, সকাল ৯টা–বিকাল ৫টা</div>
-        <a class="btn btn-outline btn-sm btn-block" href="tel:${esc((o.phone || '16699').replace(/\D/g, ''))}" style="margin-top:10px">📞 কল করুন</a>
-      </div>
-    `).join('') || '<div class="empty-state">কোনো অফিস পাওয়া যায়নি।</div>';
+  const offList = $('#offList');
+  const offSearch = $('#offSearch');
+  const offCount = $('#offCount');
+  const mapEl = $('#districtMap');
+
+  let activeOfficeId = null;
+  let leafletMap = null;
+  const markerInstances = new Map();
+
+  const createPinIcon = (isActive = false) => {
+    return (window.L && L.divIcon) ? L.divIcon({
+      className: 'custom-map-pin',
+      html: `<div style="
+        width: ${isActive ? '32px' : '24px'};
+        height: ${isActive ? '32px' : '24px'};
+        background: ${isActive ? '#C2410C' : '#00543E'};
+        color: #fff;
+        border: 2px solid #ffffff;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+      ">
+        <span style="transform: rotate(45deg); font-size: ${isActive ? '14px' : '11px'}; line-height: 1;">⚖️</span>
+      </div>`,
+      iconSize: [isActive ? 32 : 24, isActive ? 32 : 24],
+      iconAnchor: [isActive ? 16 : 12, isActive ? 32 : 24],
+      popupAnchor: [0, isActive ? -32 : -24]
+    }) : null;
   };
 
-  render();
-  $('#offQ').oninput = (e) => render(e.target.value);
+  // Initialize Leaflet Map
+  if (window.L && mapEl) {
+    try {
+      leafletMap = L.map('districtMap', {
+        center: [23.6850, 90.3563],
+        zoom: 7,
+        scrollWheelZoom: true
+      });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(leafletMap);
+
+      setTimeout(() => {
+        if (leafletMap) leafletMap.invalidateSize();
+      }, 250);
+    } catch (e) {
+      console.warn('Map initialization note:', e);
+    }
+  }
+
+  function selectOffice(o, panMap = true) {
+    activeOfficeId = o.id;
+
+    // Highlight card in list
+    $$('.office-card-single').forEach(card => {
+      const match = card.dataset.id === o.id;
+      card.classList.toggle('active', match);
+      if (match) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+
+    // Update marker pins and pan
+    if (leafletMap) {
+      markerInstances.forEach((marker, id) => {
+        if (id === o.id) {
+          if (marker.setIcon) marker.setIcon(createPinIcon(true));
+          marker.openPopup();
+          if (panMap) {
+            leafletMap.flyTo([o.lat, o.lng], 11, { duration: 1.2 });
+          }
+        } else {
+          if (marker.setIcon) marker.setIcon(createPinIcon(false));
+        }
+      });
+    }
+  }
+
+  function renderListAndMarkers(q = '') {
+    q = q.trim().toLowerCase();
+    const matched = offices.filter(o => 
+      !q || 
+      (o.name || '').toLowerCase().includes(q) || 
+      (o.district || '').toLowerCase().includes(q) || 
+      (o.division || '').toLowerCase().includes(q) || 
+      (o.address || '').toLowerCase().includes(q)
+    );
+
+    if (offCount) {
+      offCount.textContent = `প্রদর্শন করা হচ্ছে: ${bnNum(matched.length)}টি অফিস`;
+    }
+
+    if (!matched.length) {
+      offList.innerHTML = `<div class="empty-state" style="padding:2rem">কোনো জেলা বা অফিস পাওয়া যায়নি। অন্য জেলার নাম লিখে চেষ্টা করুন।</div>`;
+      return;
+    }
+
+    offList.innerHTML = matched.map(o => `
+      <div class="office-card-single ${activeOfficeId === o.id ? 'active' : ''}" data-id="${esc(o.id)}">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px">
+          <h3>🏛️ ${esc(o.name)}</h3>
+          <span class="service-tag-badge" style="font-size:0.75rem">${esc(o.division || 'জেলা')} বিভাগ</span>
+        </div>
+        <div class="office-card-addr">📍 ${esc(o.address || o.district + ' জেলা জজ আদালত ভবন')}</div>
+        <div class="office-card-meta">
+          <span>🕒 <strong>সময়:</strong> ${esc(o.hours || 'রবি–বৃহস্পতি, সকাল ৯টা – বিকাল ৫টা')}</span>
+          <span>📞 <strong>হেল্পলাইন/ফোন:</strong> ${esc(o.phone || '১৬৬৯৯')}</span>
+        </div>
+        <div class="office-card-actions">
+          <a class="btn-office-call" href="tel:${esc((o.phone || '16699').replace(/\D/g, ''))}">📞 সরাসরি কল</a>
+          <a class="btn-office-apply" href="#/apply?district=${encodeURIComponent(o.district || '')}">📝 আবেদন দাখিল</a>
+        </div>
+      </div>
+    `).join('');
+
+    // Bind card clicks
+    $$('.office-card-single', offList).forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        const targetId = card.dataset.id;
+        const targetOffice = offices.find(x => x.id === targetId);
+        if (targetOffice) selectOffice(targetOffice, true);
+      });
+    });
+
+    // Update map markers
+    if (leafletMap) {
+      markerInstances.forEach(m => leafletMap.removeLayer(m));
+      markerInstances.clear();
+
+      matched.forEach(o => {
+        if (!o.lat || !o.lng) return;
+        const isAct = o.id === activeOfficeId;
+        const marker = L.marker([o.lat, o.lng], { icon: createPinIcon(isAct) }).addTo(leafletMap);
+        
+        const popupHtml = `
+          <div style="font-family:'Hind Siliguri',sans-serif;min-width:210px;padding:4px">
+            <h4 style="margin:0 0 4px;color:#00543E;font-size:1.02rem">🏛️ ${esc(o.name)}</h4>
+            <div style="font-size:0.84rem;color:#475569;margin-bottom:6px">📍 ${esc(o.address || o.district)}</div>
+            <div style="font-size:0.85rem;color:#1E293B;margin-bottom:8px">📞 <strong>${esc(o.phone || '১৬৬৯৯')}</strong></div>
+            <div style="display:flex;gap:6px">
+              <a href="tel:${esc((o.phone || '16699').replace(/\D/g, ''))}" style="flex:1;text-align:center;padding:5px 8px;background:#F1F5F9;border:1px solid #CBD5E1;border-radius:4px;font-size:0.8rem;text-decoration:none;color:#00543E;font-weight:600">📞 কল</a>
+              <a href="#/apply?district=${encodeURIComponent(o.district)}" style="flex:1;text-align:center;padding:5px 8px;background:#00543E;border-radius:4px;font-size:0.8rem;text-decoration:none;color:#fff;font-weight:600">আবেদন</a>
+            </div>
+          </div>
+        `;
+        marker.bindPopup(popupHtml);
+
+        marker.on('click', () => {
+          selectOffice(o, false);
+        });
+
+        markerInstances.set(o.id, marker);
+      });
+
+      if (matched.length === 1) {
+        selectOffice(matched[0], true);
+      } else if (matched.length > 1 && !activeOfficeId) {
+        leafletMap.setView([23.6850, 90.3563], 7);
+      }
+    }
+  }
+
+  renderListAndMarkers();
+
+  if (offSearch) {
+    let debounceTimer;
+    offSearch.addEventListener('input', (e) => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        renderListAndMarkers(e.target.value);
+      }, 150);
+    });
+  }
 }
 
 async function pageNews() {
